@@ -548,46 +548,93 @@
             <div class="logo-circle">AS</div>
             <div class="logo-text">Adarsh S</div>
         </div>
-         <nav>
-                <ul>
-                    <li class="active">
-                        <a href="index.html">
-                            <span class="icon">🏠</span>
-                            <span class="text">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html">
-                            <span class="icon">👤</span>
-                            <span class="text">About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="services.html">
-                            <span class="icon">📋</span>
-                            <span class="text">Services</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Portfolio.html">
-                            <span class="icon">📁</span>
-                            <span class="text">Projects</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html">
-                            <span class="icon">💬</span>
-                            <span class="text">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
+        <nav>
+            <ul>
+                <li>
+                    <a href="#home">
+                        <span class="icon">🏠</span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <span class="icon">👤</span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#services">
+                        <span class="icon">📋</span>
+                        <span class="text">Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio">
+                        <span class="icon">📁</span>
+                        <span class="text">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <span class="icon">💬</span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </aside>
 
     <!-- Main Content -->
     <main class="content">
-        <div id="portfolio-content">
+        <!-- Home Section -->
+        <div id="home-content" class="page-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="sub-title">Full-stack Developer & AI Enthusiast</p>
+            
+            <div class="page-message">
+                <p>Hi, I'm Adarsh S, a passionate developer with expertise in AI, machine learning, and web technologies. Welcome to my portfolio website! Use the sidebar to explore my projects and learn more about my skills and services.</p>
+                <p style="margin-top: 20px;">Ready to see my work? <a href="#portfolio" style="color: var(--primary); text-decoration: none; font-weight: bold;">Check out my projects</a>.</p>
+            </div>
+        </div>
+        
+        <!-- About Section -->
+        <div id="about-content" class="page-content">
+            <h1>About Me</h1>
+            <p class="sub-title">My journey and expertise</p>
+            
+            <div class="page-message">
+                <p>I'm Adarsh S, a developer passionate about creating innovative solutions using AI, machine learning, and web technologies. With a strong foundation in both front-end and back-end development, I strive to build applications that are not just functional but also provide exceptional user experiences.</p>
+                <p style="margin-top: 15px;">My expertise includes:</p>
+                <ul style="text-align: left; margin: 15px 0; list-style-position: inside;">
+                    <li>Full-stack web development (HTML, CSS, JavaScript, React, Node.js)</li>
+                    <li>Machine Learning and AI implementation</li>
+                    <li>Data analysis and visualization</li>
+                    <li>User experience design</li>
+                </ul>
+                <p style="margin-top: 15px;">I'm constantly learning and exploring new technologies to stay at the forefront of the rapidly evolving tech landscape.</p>
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div id="services-content" class="page-content">
+            <h1>Services</h1>
+            <p class="sub-title">What I can do for you</p>
+            
+            <div class="page-message">
+                <p>I offer a range of development and technical services including:</p>
+                <ul style="text-align: left; margin: 15px 0; list-style-position: inside;">
+                    <li>Web Development - Creating responsive, modern websites and web applications</li>
+                    <li>Machine Learning Implementation - Building custom AI models and integrating them into applications</li>
+                    <li>Data Analysis - Transforming raw data into meaningful insights and visualizations</li>
+                    <li>Custom Software Development - Developing tailored software solutions for specific business needs</li>
+                    <li>UX/UI Design - Creating intuitive and engaging user interfaces</li>
+                </ul>
+                <p style="margin-top: 15px;">Interested in working together? <a href="#contact" style="color: var(--primary); text-decoration: none; font-weight: bold;">Contact me</a> to discuss your project requirements.</p>
+            </div>
+        </div>
+        
+        <!-- Portfolio Section -->
+        <div id="portfolio-content" class="page-content">
             <h1>Portfolio</h1>
             <p class="sub-title">Explore my latest projects and creative works</p>
             
@@ -636,25 +683,26 @@
             </div>
         </div>
         
-        <!-- Placeholder content for other pages -->
-        <div id="home-content" class="page-message">
-            <h1>Home</h1>
-            <p>Welcome to my portfolio website! Navigate using the sidebar to explore my projects and learn more about me.</p>
-        </div>
-        
-        <div id="about-content" class="page-message">
-            <h1>About Me</h1>
-            <p>I'm Adarsh S, a developer passionate about creating innovative solutions using AI, machine learning, and web technologies.</p>
-        </div>
-        
-        <div id="services-content" class="page-message">
-            <h1>Services</h1>
-            <p>I offer web development, machine learning implementation, data analysis, and custom software development services.</p>
-        </div>
-        
-        <div id="contact-content" class="page-message">
+        <!-- Contact Section -->
+        <div id="contact-content" class="page-content">
             <h1>Contact Me</h1>
-            <p>Feel free to reach out at <a href="mailto:contact@adarsh-s.com">contact@adarsh-s.com</a> or connect with me on GitHub.</p>
+            <p class="sub-title">Let's work together</p>
+            
+            <div class="page-message">
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <p style="margin-top: 20px;">Email: <a href="mailto:contact@adarsh-s.com" style="color: var(--primary); text-decoration: none; font-weight: bold;">contact@adarsh-s.com</a></p>
+                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+                    <a href="https://github.com/adarsh-s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adarsh-s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com/adarsh_s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
     
@@ -672,73 +720,43 @@
                 githubLink.style.display = 'block';
             }
         }
+     // Function to show the current page based on hash
+function showCurrentPage() {
+    // Default to portfolio if no hash
+    let currentPage = window.location.hash.replace('#', '') || 'portfolio';
+    
+    // Hide all content sections
+    document.querySelectorAll('.page-content').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Show the current page content
+    const currentSection = document.getElementById(currentPage + '-content');
+    if (currentSection) {
+        currentSection.style.display = 'block';
         
-        // Get the current page from URL
-        function getCurrentPage() {
-            const path = window.location.pathname;
-            if (path.includes('index.html') || path.endsWith('/')) {
-                return 'home';
-            } else if (path.includes('about.html')) {
-                return 'about';
-            } else if (path.includes('services.html')) {
-                return 'services';
-            } else if (path.includes('portfolio.html')) {
-                return 'portfolio';
-            } else if (path.includes('contact.html')) {
-                return 'contact';
-            }
-            return 'portfolio'; // Default to portfolio if no match
-        }
-        
-        // Show the current page content and update active state
-        function showCurrentPage() {
-            const currentPage = getCurrentPage();
-            
-            // Hide all content divs
-            document.querySelectorAll('.content > div').forEach(div => {
-                div.style.display = 'none';
-            });
-            
-            // Show the current page content
-            document.getElementById(currentPage + '-content').style.display = 'block';
-            
-            // Update active class in navigation
-            document.querySelectorAll('nav ul li').forEach(li => {
-                li.classList.remove('active');
-            });
-            
-            // Find and set active link
-            const activeLink = document.getElementById(currentPage + '-link');
-            if (activeLink) {
-                activeLink.parentElement.classList.add('active');
-            }
-        }
-        
-        // Handle navigation clicks
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the page ID from the link's ID
-                const pageId = this.id.replace('-link', '');
-                
-                // Update URL without refreshing page if we're in a GitHub Pages environment
-                if (window.location.hostname.includes('github.io')) {
-                    const repoName = window.location.pathname.split('/')[1];
-                    window.history.pushState({}, '', `/${repoName}/${pageId}.html`);
-                } else {
-                    window.history.pushState({}, '', `${pageId}.html`);
-                }
-                
-                showCurrentPage();
-            });
+        // Update active state in navigation
+        document.querySelectorAll('nav ul li').forEach(item => {
+            item.classList.remove('active');
         });
         
-        // Initialize page on load
-        window.addEventListener('load', showCurrentPage);
+        // Find the nav item with matching href and make it active
+        const activeNavItem = document.querySelector(`nav ul li a[href="#${currentPage}"]`);
+        if (activeNavItem) {
+            activeNavItem.parentElement.classList.add('active');
+        }
         
-        // Handle back/forward navigation
-        window.addEventListener('popstate', showCurrentPage);
-    </script>
-</body>
-</html>
+        // Show message for non-portfolio pages
+        if (currentPage !== 'portfolio') {
+            document.querySelectorAll('.page-message').forEach(message => {
+                if (message.closest('.page-content') === currentSection) {
+                    message.style.display = 'block';
+                }
+            });
+        }
+    }
+}
+
+// Run on page load and when hash changes
+window.addEventListener('hashchange', showCurrentPage);
+document.addEventListener('DOMContentLoaded', showCurrentPage);
