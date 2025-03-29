@@ -442,6 +442,11 @@
             display: none;
         }
         
+        /* Page content sections */
+        .page-content {
+            display: none;
+        }
+        
         /* Responsive Design */
         @media (max-width: 1200px) {
             .portfolio-grid {
@@ -587,7 +592,7 @@
     <!-- Main Content -->
     <main class="content">
         <!-- Home Section -->
-        <div id="home-content" class="page-content">
+        <div id="home" class="page-content">
             <h1>Welcome to My Portfolio</h1>
             <p class="sub-title">Full-stack Developer & AI Enthusiast</p>
             
@@ -598,7 +603,7 @@
         </div>
         
         <!-- About Section -->
-        <div id="about-content" class="page-content">
+        <div id="about" class="page-content">
             <h1>About Me</h1>
             <p class="sub-title">My journey and expertise</p>
             
@@ -616,7 +621,7 @@
         </div>
         
         <!-- Services Section -->
-        <div id="services-content" class="page-content">
+        <div id="services" class="page-content">
             <h1>Services</h1>
             <p class="sub-title">What I can do for you</p>
             
@@ -634,7 +639,7 @@
         </div>
         
         <!-- Portfolio Section -->
-        <div id="portfolio-content" class="page-content">
+        <div id="portfolio" class="page-content">
             <h1>Portfolio</h1>
             <p class="sub-title">Explore my latest projects and creative works</p>
             
@@ -684,7 +689,7 @@
         </div>
         
         <!-- Contact Section -->
-        <div id="contact-content" class="page-content">
+        <div id="contact" class="page-content">
             <h1>Contact Me</h1>
             <p class="sub-title">Let's work together</p>
             
@@ -720,43 +725,59 @@
                 githubLink.style.display = 'block';
             }
         }
-     // Function to show the current page based on hash
+        // Function to show the current page based on hash
 function showCurrentPage() {
-    // Default to portfolio if no hash
-    let currentPage = window.location.hash.replace('#', '') || 'portfolio';
-    
-    // Hide all content sections
-    document.querySelectorAll('.page-content').forEach(section => {
-        section.style.display = 'none';
+    // Hide all page content
+    const pages = document.querySelectorAll('.page-content');
+    pages.forEach(page => {
+        page.style.display = 'none';
     });
     
-    // Show the current page content
-    const currentSection = document.getElementById(currentPage + '-content');
-    if (currentSection) {
-        currentSection.style.display = 'block';
+    // Remove active class from all nav items
+    const navItems = document.querySelectorAll('nav ul li');
+    navItems.forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Get current hash or default to home
+    let currentPage = location.hash || '#home';
+    
+    // Show current page
+    const pageToShow = document.querySelector(currentPage);
+    if (pageToShow) {
+        pageToShow.style.display = 'block';
         
-        // Update active state in navigation
-        document.querySelectorAll('nav ul li').forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Find the nav item with matching href and make it active
-        const activeNavItem = document.querySelector(`nav ul li a[href="#${currentPage}"]`);
-        if (activeNavItem) {
-            activeNavItem.parentElement.classList.add('active');
-        }
-        
-        // Show message for non-portfolio pages
-        if (currentPage !== 'portfolio') {
-            document.querySelectorAll('.page-message').forEach(message => {
-                if (message.closest('.page-content') === currentSection) {
-                    message.style.display = 'block';
-                }
-            });
-        }
+        // Add active class to current nav item
+        const activeNavItem = document.querySelector(`nav ul li a[href="${currentPage}"]`).parentElement;
+        activeNavItem.classList.add('active');
+    } else {
+        // If page not found, show home
+        document.querySelector('#home').style.display = 'block';
+        document.querySelector('nav ul li a[href="#home"]').parentElement.classList.add('active');
+    }
+    
+    // Show message for each page
+    const pageMessage = pageToShow.querySelector('.page-message');
+    if (pageMessage) {
+        pageMessage.style.display = 'block';
     }
 }
 
-// Run on page load and when hash changes
+// Initialize page
+window.addEventListener('DOMContentLoaded', function() {
+    showCurrentPage();
+    
+    // Add event listeners for nav items
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Update hash without jumping
+            history.pushState(null, null, this.getAttribute('href'));
+            showCurrentPage();
+            e.preventDefault();
+        });
+    });
+});
+
+// Handle hash changes
 window.addEventListener('hashchange', showCurrentPage);
-document.addEventListener('DOMContentLoaded', showCurrentPage);
