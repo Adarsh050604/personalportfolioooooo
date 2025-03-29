@@ -428,6 +428,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* Message for unavailable pages */
+        .page-message {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid var(--glass-stroke);
+            margin: 50px auto;
+            max-width: 600px;
+            text-align: center;
+            display: none;
+        }
+        
         /* Responsive Design */
         @media (max-width: 1200px) {
             .portfolio-grid {
@@ -538,31 +552,31 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="index.html" id="home-link">
                         <span class="icon">🏠</span>
                         <span class="text">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="about.html">
+                    <a href="about.html" id="about-link">
                         <span class="icon">👤</span>
                         <span class="text">About</span>
                     </a>
                 </li>
                 <li>
-                    <a href="services.html">
+                    <a href="services.html" id="services-link">
                         <span class="icon">📋</span>
                         <span class="text">Services</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="portfolio.html">
+                    <a href="portfolio.html" id="portfolio-link">
                         <span class="icon">📁</span>
                         <span class="text">Projects</span>
                     </a>
                 </li>
                 <li>
-                    <a href="contact.html">
+                    <a href="contact.html" id="contact-link">
                         <span class="icon">💬</span>
                         <span class="text">Contact</span>
                     </a>
@@ -573,55 +587,79 @@
 
     <!-- Main Content -->
     <main class="content">
-        <h1>Portfolio</h1>
-        <p class="sub-title">Explore my latest projects and creative works</p>
+        <div id="portfolio-content">
+            <h1>Portfolio</h1>
+            <p class="sub-title">Explore my latest projects and creative works</p>
+            
+            <div class="portfolio-grid">
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Face+Mask+Detection" alt="Face Mask Detection">
+                    <div class="description">FACE MASK DETECTION USING AI AND ML</div>
+                    <p>An intelligent system using machine learning and computer vision to detect whether a person is wearing a mask, enhancing safety measures in public spaces.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/face-mask-detection" target="_blank">View on GitHub</a></div>
+                </div>
+                
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/FF3CAC/FFF?text=SDG+Learning" alt="SDG Learning Website">
+                    <div class="description">SDG FOR CLASSROOM LEARNING WEBSITE</div>
+                    <p>A website that provides educational resources and tools to help students and teachers learn about the United Nations Sustainable Development Goals.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/sdg-learning-platform" target="_blank">View on GitHub</a></div>
+                </div>
+                
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/00DBDE/FFF?text=Attendance+System" alt="Attendance System">
+                    <div class="description">ATTENDANCE MANAGEMENT SYSTEM</div>
+                    <p>A web-based system that allows teachers to take attendance, track student attendance records, and generate reports.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/attendance-management" target="_blank">View on GitHub</a></div>
+                </div>
+                
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Finance+Tracker" alt="Project 4">
+                    <div class="description">PERSONAL FINANCE TRACKER</div>
+                    <p>A web application that helps users track their income, expenses, and savings goals with intuitive visualizations and budget planning tools.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/finance-tracker" target="_blank">View on GitHub</a></div>
+                </div>
+                
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/FF3CAC/FFF?text=Sentiment+Analysis" alt="Project 5">
+                    <div class="description">SENTIMENT ANALYSIS DASHBOARD</div>
+                    <p>A data science project that analyzes customer reviews and social media comments to provide insights on product sentiment and customer satisfaction.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/sentiment-analysis" target="_blank">View on GitHub</a></div>
+                </div>
+                
+                <div class="project" onclick="toggleDescription(this)">
+                    <img src="https://placehold.co/600x400/00DBDE/FFF?text=Weather+App" alt="Project 6">
+                    <div class="description">WEATHER PREDICTION APP</div>
+                    <p>A mobile application that uses machine learning algorithms to provide accurate weather forecasts and personalized recommendations based on user location.</p>
+                    <div class="github-link"><a href="https://github.com/adarsh-s/weather-prediction" target="_blank">View on GitHub</a></div>
+                </div>
+            </div>
+        </div>
         
-        <div class="portfolio-grid">
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/image2.jpeg" alt="Face Mask Detection">
-                <div class="description">FACE MASK DETECTION USING AI AND ML</div>
-                <p>An intelligent system using machine learning and computer vision to detect whether a person is wearing a mask, enhancing safety measures in public spaces.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/face-mask-detection" target="_blank">View on GitHub</a></div>
-            </div>
-            
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/image4.png" alt="SDG Learning Website">
-                <div class="description">SDG FOR CLASSROOM LEARNING WEBSITE</div>
-                <p>A website that provides educational resources and tools to help students and teachers learn about the United Nations Sustainable Development Goals.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/sdg-learning-platform" target="_blank">View on GitHub</a></div>
-            </div>
-            
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/image5.png" alt="Attendance System">
-                <div class="description">ATTENDANCE MANAGEMENT SYSTEM</div>
-                <p>A web-based system that allows teachers to take attendance, track student attendance records, and generate reports.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/attendance-management" target="_blank">View on GitHub</a></div>
-            </div>
-            
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/project4.jpg" alt="Project 4">
-                <div class="description">PERSONAL FINANCE TRACKER</div>
-                <p>A web application that helps users track their income, expenses, and savings goals with intuitive visualizations and budget planning tools.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/finance-tracker" target="_blank">View on GitHub</a></div>
-            </div>
-            
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/project5.jpg" alt="Project 5">
-                <div class="description">SENTIMENT ANALYSIS DASHBOARD</div>
-                <p>A data science project that analyzes customer reviews and social media comments to provide insights on product sentiment and customer satisfaction.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/sentiment-analysis" target="_blank">View on GitHub</a></div>
-            </div>
-            
-            <div class="project" onclick="toggleDescription(this)">
-                <img src="images/project6.jpg" alt="Project 6">
-                <div class="description">WEATHER PREDICTION APP</div>
-                <p>A mobile application that uses machine learning algorithms to provide accurate weather forecasts and personalized recommendations based on user location.</p>
-                <div class="github-link"><a href="https://github.com/adarsh-s/weather-prediction" target="_blank">View on GitHub</a></div>
-            </div>
+        <!-- Placeholder content for other pages -->
+        <div id="home-content" class="page-message">
+            <h1>Home</h1>
+            <p>Welcome to my portfolio website! Navigate using the sidebar to explore my projects and learn more about me.</p>
+        </div>
+        
+        <div id="about-content" class="page-message">
+            <h1>About Me</h1>
+            <p>I'm Adarsh S, a developer passionate about creating innovative solutions using AI, machine learning, and web technologies.</p>
+        </div>
+        
+        <div id="services-content" class="page-message">
+            <h1>Services</h1>
+            <p>I offer web development, machine learning implementation, data analysis, and custom software development services.</p>
+        </div>
+        
+        <div id="contact-content" class="page-message">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out at <a href="mailto:contact@adarsh-s.com">contact@adarsh-s.com</a> or connect with me on GitHub.</p>
         </div>
     </main>
     
     <script>
+        // Function to toggle project description
         function toggleDescription(element) {
             const description = element.querySelector('p');
             const githubLink = element.querySelector('.github-link');
@@ -634,6 +672,73 @@
                 githubLink.style.display = 'block';
             }
         }
+        
+        // Get the current page from URL
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            if (path.includes('index.html') || path.endsWith('/')) {
+                return 'home';
+            } else if (path.includes('about.html')) {
+                return 'about';
+            } else if (path.includes('services.html')) {
+                return 'services';
+            } else if (path.includes('portfolio.html')) {
+                return 'portfolio';
+            } else if (path.includes('contact.html')) {
+                return 'contact';
+            }
+            return 'portfolio'; // Default to portfolio if no match
+        }
+        
+        // Show the current page content and update active state
+        function showCurrentPage() {
+            const currentPage = getCurrentPage();
+            
+            // Hide all content divs
+            document.querySelectorAll('.content > div').forEach(div => {
+                div.style.display = 'none';
+            });
+            
+            // Show the current page content
+            document.getElementById(currentPage + '-content').style.display = 'block';
+            
+            // Update active class in navigation
+            document.querySelectorAll('nav ul li').forEach(li => {
+                li.classList.remove('active');
+            });
+            
+            // Find and set active link
+            const activeLink = document.getElementById(currentPage + '-link');
+            if (activeLink) {
+                activeLink.parentElement.classList.add('active');
+            }
+        }
+        
+        // Handle navigation clicks
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the page ID from the link's ID
+                const pageId = this.id.replace('-link', '');
+                
+                // Update URL without refreshing page if we're in a GitHub Pages environment
+                if (window.location.hostname.includes('github.io')) {
+                    const repoName = window.location.pathname.split('/')[1];
+                    window.history.pushState({}, '', `/${repoName}/${pageId}.html`);
+                } else {
+                    window.history.pushState({}, '', `${pageId}.html`);
+                }
+                
+                showCurrentPage();
+            });
+        });
+        
+        // Initialize page on load
+        window.addEventListener('load', showCurrentPage);
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', showCurrentPage);
     </script>
 </body>
 </html>
