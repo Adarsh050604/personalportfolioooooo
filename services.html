@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh S | Services</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <!-- Particle background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Animated gradient background -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Noise texture overlay -->
+    <div class="noise"></div>
+    
+    <!-- Custom cursor effect -->
+    <div class="cursor-effect"></div>
+    
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-circle">AS</div>
+                <div class="logo-text">Adarsh S</div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <span class="icon">🏠</span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <span class="icon">👤</span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="services.html">
+                            <span class="icon">📋</span>
+                            <span class="text">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">
+                            <span class="icon">📁</span>
+                            <span class="text">Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <span class="icon">💬</span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main content -->
+        <main class="main-content">
+            <h1 class="page-title">My <span class="gradient-text">Services</span></h1>
+            
+            <div class="theme-switcher">
+                <div class="theme-button" style="background: var(--primary);" onclick="setThemeColor('#8A2BE2', '#FF3CAC', '#00DBDE')"></div>
+                <div class="theme-button" style="background: red;" onclick="setThemeColor('#FF0000', '#FF4500', '#FFA500')"></div>
+                <div class="theme-button" style="background: green;" onclick="setThemeColor('#00A86B', '#00CED1', '#008080')"></div>
+                <div class="theme-button" style="background: blue;" onclick="setThemeColor('#0000FF', '#4169E1', '#1E90FF')"></div>
+            </div>
+            
+            <div class="service-container">
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">💻</div>
+                    <h3>Web Design</h3>
+                    <p>Creating responsive, visually appealing, and user-friendly websites using HTML, CSS, JavaScript, and modern frameworks. Specializing in UI/UX design, landing pages, portfolio sites, and e-commerce layouts.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Designing eye-catching logos, banners, social media graphics, and marketing materials. Skilled in Adobe Photoshop, Illustrator, and Canva to create visually appealing and brand-focused designs.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">📱</div>
+                    <h3>App Development</h3>
+                    <p>Building responsive and high-performance mobile applications using Flutter, React Native, or native Android (Kotlin) and iOS (Swift). Specializing in UI/UX, API integration, and scalable app solutions.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">🗄️</div>
+                    <h3>Database Design & Management</h3>
+                    <p>Designing efficient, scalable databases using SQL (MySQL, PostgreSQL) and NoSQL (MongoDB, Firebase). Expertise in data modeling, optimization, security, and backup solutions.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">⚙️</div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Developing end-to-end web applications with modern frontend (React, Angular) and backend (Django, Node.js) technologies. Expertise in database management, API development, and cloud deployment.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+                <div class="service-box" onclick="toggleDescription(this)">
+                    <div class="icon">🔌</div>
+                    <h3>IoT Development</h3>
+                    <p>Building smart, connected systems using Raspberry Pi, Arduino, and IoT platforms. Expertise in sensor integration, real-time data processing, automation, and cloud connectivity for innovative IoT solutions.</p>
+                    <div class="message-box" onclick="redirectToContact(event)">Contact Me</div>
+                </div>
+            </div>
+            
+            <div id="success-message">Message sent successfully!</div>
+        </main>
+    </div>
+    
+    <script src="scriptr.js"></script>
+</body>
+</html>
