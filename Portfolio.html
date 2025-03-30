@@ -43,34 +43,35 @@
             <div class="logo-circle">AS</div>
             <div class="logo-text">Adarsh S</div>
         </div>
+        
         <nav>
             <ul>
-                <li class="nav-item">
-                    <a href="#home">
+                <li>
+                    <a href="index.html" id="home-link">
                         <span class="icon">🏠</span>
                         <span class="text">Home</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about">
+                <li>
+                    <a href="about.html" id="about-link">
                         <span class="icon">👤</span>
                         <span class="text">About</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#services">
+                <li>
+                    <a href="services.html" id="services-link">
                         <span class="icon">📋</span>
                         <span class="text">Services</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#portfolio">
+                <li class="active">
+                   <a href="Portfolio.html" id="portfolio-link">
                         <span class="icon">📁</span>
                         <span class="text">Projects</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact">
+                <li>
+                    <a href="contact.html" id="contact-link">
                         <span class="icon">💬</span>
                         <span class="text">Contact</span>
                     </a>
@@ -81,95 +82,47 @@
 
     <!-- Main Content -->
     <main class="content">
-        <!-- Home Section -->
-        <div id="home" class="page-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="sub-title">Full-stack Developer & AI Enthusiast</p>
-            
-            <div class="page-message">
-                <p>Hi, I'm Adarsh S, a passionate developer with expertise in AI, machine learning, and web technologies. Welcome to my portfolio website! Use the sidebar to explore my projects and learn more about my skills and services.</p>
-                <p style="margin-top: 20px;">Ready to see my work? <a href="#portfolio" style="color: var(--primary); text-decoration: none; font-weight: bold;">Check out my projects</a>.</p>
-            </div>
-        </div>
-        
-        <!-- About Section -->
-        <div id="about" class="page-content">
-            <h1>About Me</h1>
-            <p class="sub-title">My journey and expertise</p>
-            
-            <div class="page-message">
-                <p>I'm Adarsh S, a developer passionate about creating innovative solutions using AI, machine learning, and web technologies. With a strong foundation in both front-end and back-end development, I strive to build applications that are not just functional but also provide exceptional user experiences.</p>
-                <p style="margin-top: 15px;">My expertise includes:</p>
-                <ul style="text-align: left; margin: 15px 0; list-style-position: inside;">
-                    <li>Full-stack web development (HTML, CSS, JavaScript, React, Node.js)</li>
-                    <li>Machine Learning and AI implementation</li>
-                    <li>Data analysis and visualization</li>
-                    <li>User experience design</li>
-                </ul>
-                <p style="margin-top: 15px;">I'm constantly learning and exploring new technologies to stay at the forefront of the rapidly evolving tech landscape.</p>
-            </div>
-        </div>
-        
-        <!-- Services Section -->
-        <div id="services" class="page-content">
-            <h1>Services</h1>
-            <p class="sub-title">What I can do for you</p>
-            
-            <div class="page-message">
-                <p>I offer a range of development and technical services including:</p>
-                <ul style="text-align: left; margin: 15px 0; list-style-position: inside;">
-                    <li>Web Development - Creating responsive, modern websites and web applications</li>
-                    <li>Machine Learning Implementation - Building custom AI models and integrating them into applications</li>
-                    <li>Data Analysis - Transforming raw data into meaningful insights and visualizations</li>
-                    <li>Custom Software Development - Developing tailored software solutions for specific business needs</li>
-                    <li>UX/UI Design - Creating intuitive and engaging user interfaces</li>
-                </ul>
-                <p style="margin-top: 15px;">Interested in working together? <a href="#contact" style="color: var(--primary); text-decoration: none; font-weight: bold;">Contact me</a> to discuss your project requirements.</p>
-            </div>
-        </div>
-        
-        <!-- Portfolio Section -->
-        <div id="portfolio" class="page-content">
+        <div id="portfolio-content">
             <h1>Portfolio</h1>
             <p class="sub-title">Explore my latest projects and creative works</p>
             
             <div class="portfolio-grid">
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Face+Mask+Detection" alt="Face Mask Detection">
                     <div class="description">FACE MASK DETECTION USING AI AND ML</div>
                     <p>An intelligent system using machine learning and computer vision to detect whether a person is wearing a mask, enhancing safety measures in public spaces.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/face-mask-detection" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/FF3CAC/FFF?text=SDG+Learning" alt="SDG Learning Website">
                     <div class="description">SDG FOR CLASSROOM LEARNING WEBSITE</div>
                     <p>A website that provides educational resources and tools to help students and teachers learn about the United Nations Sustainable Development Goals.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/sdg-learning-platform" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/00DBDE/FFF?text=Attendance+System" alt="Attendance System">
                     <div class="description">ATTENDANCE MANAGEMENT SYSTEM</div>
                     <p>A web-based system that allows teachers to take attendance, track student attendance records, and generate reports.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/attendance-management" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Finance+Tracker" alt="Project 4">
                     <div class="description">PERSONAL FINANCE TRACKER</div>
                     <p>A web application that helps users track their income, expenses, and savings goals with intuitive visualizations and budget planning tools.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/finance-tracker" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/FF3CAC/FFF?text=Sentiment+Analysis" alt="Project 5">
                     <div class="description">SENTIMENT ANALYSIS DASHBOARD</div>
                     <p>A data science project that analyzes customer reviews and social media comments to provide insights on product sentiment and customer satisfaction.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/sentiment-analysis" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this, event)">
+                <div class="project" onclick="toggleDescription(this)">
                     <img src="https://placehold.co/600x400/00DBDE/FFF?text=Weather+App" alt="Project 6">
                     <div class="description">WEATHER PREDICTION APP</div>
                     <p>A mobile application that uses machine learning algorithms to provide accurate weather forecasts and personalized recommendations based on user location.</p>
@@ -178,29 +131,28 @@
             </div>
         </div>
         
-        <!-- Contact Section -->
-        <div id="contact" class="page-content">
+        <!-- Placeholder content for other pages -->
+        <div id="home-content" class="page-message">
+            <h1>Home</h1>
+            <p>Welcome to my portfolio website! Navigate using the sidebar to explore my projects and learn more about me.</p>
+        </div>
+        
+        <div id="about-content" class="page-message">
+            <h1>About Me</h1>
+            <p>I'm Adarsh S, a developer passionate about creating innovative solutions using AI, machine learning, and web technologies.</p>
+        </div>
+        
+        <div id="services-content" class="page-message">
+            <h1>Services</h1>
+            <p>I offer web development, machine learning implementation, data analysis, and custom software development services.</p>
+        </div>
+        
+        <div id="contact-content" class="page-message">
             <h1>Contact Me</h1>
-            <p class="sub-title">Let's work together</p>
-            
-            <div class="page-message">
-                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-                <p style="margin-top: 20px;">Email: <a href="mailto:contact@adarsh-s.com" style="color: var(--primary); text-decoration: none; font-weight: bold;">contact@adarsh-s.com</a></p>
-                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
-                    <a href="https://github.com/adarsh-s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/adarsh-s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://twitter.com/adarsh_s" target="_blank" style="color: var(--light); font-size: 24px; transition: var(--transition);">
-                        <span>Twitter</span>
-                    </a>
-                </div>
-            </div>
+            <p>Feel free to reach out at <a href="mailto:contact@adarsh-s.com">contact@adarsh-s.com</a> or connect with me on GitHub.</p>
         </div>
     </main>
     
-    <script src="scripppppt.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
