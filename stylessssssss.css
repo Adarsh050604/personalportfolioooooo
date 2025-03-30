@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
-        
+
 :root {
     --primary: #8A2BE2;
     --secondary: #FF3CAC;
@@ -432,11 +432,6 @@ h1 {
     margin: 50px auto;
     max-width: 600px;
     text-align: center;
-    display: none;
-}
-
-/* Page content sections */
-.page-content {
     display: none;
 }
 
