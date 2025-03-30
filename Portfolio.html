@@ -555,31 +555,31 @@
         </div>
         <nav>
             <ul>
-                <li>
+                <li class="nav-item">
                     <a href="#home">
                         <span class="icon">🏠</span>
                         <span class="text">Home</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#about">
                         <span class="icon">👤</span>
                         <span class="text">About</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#services">
                         <span class="icon">📋</span>
                         <span class="text">Services</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#portfolio">
                         <span class="icon">📁</span>
                         <span class="text">Projects</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#contact">
                         <span class="icon">💬</span>
                         <span class="text">Contact</span>
@@ -644,42 +644,42 @@
             <p class="sub-title">Explore my latest projects and creative works</p>
             
             <div class="portfolio-grid">
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Face+Mask+Detection" alt="Face Mask Detection">
                     <div class="description">FACE MASK DETECTION USING AI AND ML</div>
                     <p>An intelligent system using machine learning and computer vision to detect whether a person is wearing a mask, enhancing safety measures in public spaces.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/face-mask-detection" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/FF3CAC/FFF?text=SDG+Learning" alt="SDG Learning Website">
                     <div class="description">SDG FOR CLASSROOM LEARNING WEBSITE</div>
                     <p>A website that provides educational resources and tools to help students and teachers learn about the United Nations Sustainable Development Goals.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/sdg-learning-platform" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/00DBDE/FFF?text=Attendance+System" alt="Attendance System">
                     <div class="description">ATTENDANCE MANAGEMENT SYSTEM</div>
                     <p>A web-based system that allows teachers to take attendance, track student attendance records, and generate reports.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/attendance-management" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/8A2BE2/FFF?text=Finance+Tracker" alt="Project 4">
                     <div class="description">PERSONAL FINANCE TRACKER</div>
                     <p>A web application that helps users track their income, expenses, and savings goals with intuitive visualizations and budget planning tools.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/finance-tracker" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/FF3CAC/FFF?text=Sentiment+Analysis" alt="Project 5">
                     <div class="description">SENTIMENT ANALYSIS DASHBOARD</div>
                     <p>A data science project that analyzes customer reviews and social media comments to provide insights on product sentiment and customer satisfaction.</p>
                     <div class="github-link"><a href="https://github.com/adarsh-s/sentiment-analysis" target="_blank">View on GitHub</a></div>
                 </div>
                 
-                <div class="project" onclick="toggleDescription(this)">
+                <div class="project" onclick="toggleDescription(this, event)">
                     <img src="https://placehold.co/600x400/00DBDE/FFF?text=Weather+App" alt="Project 6">
                     <div class="description">WEATHER PREDICTION APP</div>
                     <p>A mobile application that uses machine learning algorithms to provide accurate weather forecasts and personalized recommendations based on user location.</p>
@@ -712,72 +712,142 @@
     </main>
     
     <script>
-        // Function to toggle project description
-        function toggleDescription(element) {
+        // Function to toggle project description without interfering with navigation
+        function toggleDescription(element, event) {
+            // Prevent the click from affecting navigation
+            event.preventDefault();
+            event.stopPropagation();
+            
             const description = element.querySelector('p');
             const githubLink = element.querySelector('.github-link');
             
             if (description.style.display === 'block') {
                 description.style.display = 'none';
                 githubLink.style.display = 'none';
-            } else {
+           } else {
                 description.style.display = 'block';
                 githubLink.style.display = 'block';
             }
         }
-        // Function to show the current page based on hash
-function showCurrentPage() {
-    // Hide all page content
-    const pages = document.querySelectorAll('.page-content');
-    pages.forEach(page => {
-        page.style.display = 'none';
-    });
-    
-    // Remove active class from all nav items
-    const navItems = document.querySelectorAll('nav ul li');
-    navItems.forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Get current hash or default to home
-    let currentPage = location.hash || '#home';
-    
-    // Show current page
-    const pageToShow = document.querySelector(currentPage);
-    if (pageToShow) {
-        pageToShow.style.display = 'block';
         
-        // Add active class to current nav item
-        const activeNavItem = document.querySelector(`nav ul li a[href="${currentPage}"]`).parentElement;
-        activeNavItem.classList.add('active');
-    } else {
-        // If page not found, show home
-        document.querySelector('#home').style.display = 'block';
-        document.querySelector('nav ul li a[href="#home"]').parentElement.classList.add('active');
-    }
-    
-    // Show message for each page
-    const pageMessage = pageToShow.querySelector('.page-message');
-    if (pageMessage) {
-        pageMessage.style.display = 'block';
-    }
-}
-
-// Initialize page
-window.addEventListener('DOMContentLoaded', function() {
-    showCurrentPage();
-    
-    // Add event listeners for nav items
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Update hash without jumping
-            history.pushState(null, null, this.getAttribute('href'));
-            showCurrentPage();
-            e.preventDefault();
+        // Handle navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-item a');
+            const pageContents = document.querySelectorAll('.page-content');
+            
+            // Set home as default active page
+            document.getElementById('home').style.display = 'block';
+            document.querySelector('.nav-item a[href="#home"]').parentElement.classList.add('active');
+            
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target section id from the href attribute
+                    const targetId = this.getAttribute('href');
+                    
+                    // Hide all page contents
+                    pageContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show the target page content
+                    document.querySelector(targetId).style.display = 'block';
+                    
+                    // Remove active class from all nav items
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active');
+                    });
+                    
+                    // Add active class to current nav item
+                    this.parentElement.classList.add('active');
+                });
+            });
+            
+            // Handle hash changes for direct URLs
+            function handleHashChange() {
+                const hash = window.location.hash || '#home';
+                const targetElement = document.querySelector(hash);
+                
+                if (targetElement) {
+                    // Hide all page contents
+                    pageContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show the target page content
+                    targetElement.style.display = 'block';
+                    
+                    // Remove active class from all nav items
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active');
+                    });
+                    
+                    // Add active class to current nav item
+                    document.querySelector(`.nav-item a[href="${hash}"]`).parentElement.classList.add('active');
+                }
+            }
+            
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHashChange);
+            
+            // Handle initial load with hash
+            if (window.location.hash) {
+                handleHashChange();
+            }
+            
+            // Create random particles dynamically
+            createParticles();
         });
-    });
-});
-
-// Handle hash changes
-window.addEventListener('hashchange', showCurrentPage);
+        
+        // Function to create random particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            const existingParticles = document.querySelectorAll('.particle').length;
+            const additionalParticles = 30; // Add more particles dynamically
+            
+            for (let i = 0; i < additionalParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random positions and animations
+                const left = Math.random() * 100;
+                const animationDuration = 30 + Math.random() * 30;
+                const animationDelay = Math.random() * 30;
+                const size = 1 + Math.random() * 2;
+                
+                particle.style.left = `${left}%`;
+                particle.style.top = '100%';
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${animationDuration}s`;
+                particle.style.animationDelay = `${animationDelay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL hash without jumping
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
